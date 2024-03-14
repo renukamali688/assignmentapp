@@ -1,0 +1,103 @@
+<form #myform="ngForm" (ngSubmit)="OnSubmit(myform)">
+  <div class="outer-div mt-5">
+    <h2 class="main-heading">Login Form</h2>
+
+    <div class="form-group userdetails">
+      <div class="justify-content-center align-item-center css-style">
+        <div class="row">
+          <div ngModelGroup="userDetails">
+            <div class="col-md-10">
+              <div class="inner-div">
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label"
+                    >UserName:</label
+                  >
+                  <input type="username" name="username" class="form-control" id="exampleInputPassword1" minlength="7" 
+                  maxlength="9" required ngModel #username="ngModel" />
+                  <small *ngIf="username.touched && username.errors">
+                    <small *ngIf="username.errors['required']">
+                      Please Enter Username!
+                    </small>
+                    <small *ngIf="username.errors['minlength']">
+                      Please Enter at least 7 letters!
+                    </small>
+                    <small *ngIf="username.valid && !username.errors">
+                      <small *ngIf="username.errors['maxlength']">
+                        Enter at most 9 letters!
+                      </small>
+                    </small>
+                  </small>
+                </div>
+
+                <div class="">
+                  <label for="exampleInputEmail1" class="form-label"
+                    >Email Address:
+                  </label>
+                  <input type="email" name="email" class="form-control" id="exampleInputEmail1" 
+                  aria-describedby="emailHelp" required minlength="9" maxlength="23" ngModel email #email="ngModel" />
+                  <div id="emailHelp" class="form-text">
+                    <small *ngIf="email.touched && email.errors">
+                      <small *ngIf="email.errors['required']">
+                        Please Enter email!
+                      </small>
+                      <small *ngIf="email.errors['minlength']">
+                        Enter at least 9 letters!
+                      </small>
+                      <small *ngIf="email.errors['maxlength']">
+                        Enter at most 15 letters!
+                      </small>
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group-select select-s mt-3 my-5">
+            <label for="course">Select Course:</label>
+            <select name="course" id="course" class="form-control" ngModel [(ngModel)]="defaultCourse" >
+              <option value="JavaScript">JavaScript</option>
+              <option value="Angular">Angular</option>
+              <option value="HTML">HTML</option>
+            </select>
+
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <!-- <label for="gender">Select Gender:</label> -->
+                <div class="input-group-text mt-3" *ngFor="let gender of genders" >
+                  <input type="radio" id="{{ gender.id }}" name="gender" value="{{ gender.value }}" ngModel [(ngModel)]="defaultGender" >
+                  <label for="{{ gender.id }}">{{ gender.value }}</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- <button type="submit" class="btn btn-primary mt-3 ms-3">Submit</button>
+              <button type="reset" class="btn btn-danger btn-bg mt-3 ms-5">Reset</button> -->
+
+            <div class="d-grid gap-2 mt-5 me button-div">
+              <button type="submit"  class="btn btn-primary">Submit</button>
+              <button type="reset" class="btn btn-danger mt-2" (click)="onReset(myform)">Reset</button>
+
+              <div class="row justify-content-center mt-5 user-info">
+                <h1 class="mt-5 user-info">Form Data</h1>
+
+                <p>
+                  Username:<strong>{{ employee.username }}</strong>
+                </p>
+                <p>
+                  Email:<strong>{{ employee.email }}</strong>
+                </p>
+                <p>
+                  Course:<strong>{{ employee.course }}</strong>
+                </p>
+                <p>
+                  Gender:<strong>{{ employee.gender }}</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,25 @@
+<p>age-calculator works!</p>
+<!-- age-calculator.component.html -->
+
+<div class="container rounded shadow">
+  <h2>Age Calculator</h2>
+  <div class="col-md-10 mt-3 ms-3">
+<div class="row">
+  <div class="input-field ms-5">
+   <span>Enter Your Birthdate:</span> 
+    <input type="date" [(ngModel)]="birthdate" id="txtdate" class="ms-3" (change)="calculateAge()">
+    
+  </div>
+  <p class="mt-5">Your Age is: {{age}}</p>
+  <!-- <div class="input-field col m4">
+    <input type="number" [(ngModel)]="age" id="age">
+  </div> -->
+  
+  </div>
+ </div>
+  </div>
+
+
+
+  
+  

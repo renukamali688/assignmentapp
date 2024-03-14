@@ -1,0 +1,33 @@
+.mainDiv{
+    margin: 1% 10% 1% 15%;
+    padding: 4%;
+    height: 95vh ;
+    width: 65vw;
+    border: 3px solid rgb(145, 145, 227);
+    border-radius: 7px;
+    box-shadow: 9px 12px 15px rgb(145, 145, 227);
+    background-color: 
+    rgb(210, 244, 236);
+}
+.main-heading{
+    font-size: 7vh;
+    text-align: center;
+    border-radius: 35px;
+    border: 2px solid rgb(83, 83, 163);
+    font-family: 'Gill Sans', 'Gill Sans MT';
+    box-shadow: 9px 12px 15px rgb(145, 145, 227);
+}
+.form-control-style{
+    font-size: 3.5vh;
+    height: 10vh;
+    width: 55vw;
+    /* border: 2px solid rgb(145, 145, 227); */
+    font-family: 'Gill Sans', 'Gill Sans MT';
+    box-shadow: 9px 8px 10px rgb(145, 145, 227);
+}
+.button-style{
+    box-shadow: 9px 12px 15px rgb(145, 145, 227);
+}
+.main-style{
+    padding: 1%;
+} 

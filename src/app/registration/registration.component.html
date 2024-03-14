@@ -1,0 +1,135 @@
+<div class="container mt-5">
+<form [formGroup]="myResistrationForm" (ngSubmit)="onSubmit()">
+    <!-- Personal Info Section Start -->
+    <div class="row">
+        <h2 class="main-heading">Registration Form</h2>
+        <div class="col-md-3">
+            <div class="row ">
+                <div class="col offset-3 mt-3">
+                    <img [src]="ImgUrl" alt="Image" height="160vh" width="135vw">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h4 class="name-heading mt-5">{{defaultName}}</h4>
+                </div>
+              
+            </div>
+            <div class="row">
+                <div class="col self-info mt-3 ">
+                    Lorem ipsum dolor sit 
+                    amet consectetur adipisicing elit. Enim et cupiditate
+                    doloribus reprehenderit ducimus Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    
+                </div>    
+            </div>
+        </div>
+
+        <!-- Personal information section end -->
+        <!-- User Details section start -->
+      
+        <div class="col-md-4">
+           
+            <h4 class="mb-4">User Details</h4>
+            <div class="form-group mb-4">
+                <label for="fullName">Full Name :<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="fullName" formControlName="fullName">
+                <small *ngIf="!myResistrationForm.get('fullName')?.valid && myResistrationForm.get('fullName')?.touched">
+                <small *ngIf="myResistrationForm.get('fullname')?.errors?.['required']">Enter Your Name</small>
+                </small>
+            </div>
+            <div class="form-group mb-5">
+                <label>BirthDate :</label>
+                    <input type="date" class="form-control" id="exampleFormControlInput1" formControlName="birthdate" placeholder="Your Birthday*">
+            </div>
+            <div class="form-group mb-4">
+                <label for="gender">Gender :</label>
+                <select class="form-control" id="gender" formControlName="gender">
+                    <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="country">country :</label>
+                        <select class="form-control"  aria-label="Dropdown Icon" id="countryCode" formControlName="countryCode">
+                            <option *ngFor="let country of countries" [value]="country.code">{{country.name}}<i class="fa fa-sort-desc" aria-hidden="true"></i></option>       
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-8 mt-4">
+                    <div class="form-group">
+                        <input type="tel" [value]="myResistrationForm.controls['countryCode'].value" class="form-control" id="phoneNumber" formControlName="countryCode" placeholder="Phone*">
+                        <div *ngIf="myResistrationForm.controls['countryCode'].value && myResistrationForm.controls['countryCode'].value">
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="form-group mt-3">
+             
+                <label for="bio">Bio</label>
+                <div>
+                    <small *ngIf="!myResistrationForm.get('bio')?.valid && myResistrationForm.get('bio')?.touched">
+                        <small *ngIf="myResistrationForm.get('bio')?.errors?.['maxlength']" class="text-danger"> Enter Only 256 Charachters</small>
+                        <small *ngIf="myResistrationForm.get('bio')?.errors?.['minlength']" class="text-danger"> Enter at least 151 Charachters</small>
+                    </small>
+                    <textarea formControlName="bio" id="bio" cols="45" rows="1"></textarea>
+                </div>
+                <small>Tell Us About YourSelf</small><span><small class="ms-5">151 /256</small></span>
+            </div>
+        </div>
+
+    <!-- User Details Section End -->
+ <!-- Account Details Section -->
+
+        <div class="col-md-4">
+                <h4 class="mb-4">Account Details</h4>
+                <div class="form-group mb-4">
+                     <label for="username">Username <span class="text-danger">*</span></label>
+                     <small *ngIf="!myResistrationForm.get('userName')?.valid && myResistrationForm.get('userName')?.touched">
+                        <small *ngIf="myResistrationForm.get('userName')?.errors?.['required']" class="text-danger">UserName Required..!</small>
+                        <small *ngIf="myResistrationForm.get('userName')?.errors?.['minlength']" class="text-danger">Username must be at least 6 Charchters</small>
+                    </small>
+                    <input type="text" class="form-control" id="username" formControlName="userName" placeholder="Username*">
+
+                </div>
+                <div class="form-group mb-3">
+                   <label for="email">Email <span class="text-danger">*</span></label>
+                <small *ngIf="!myResistrationForm.get('email')?.valid && myResistrationForm.get('email')?.touched">
+                    <small *ngIf="myResistrationForm.get('email')?.errors?.['required']" class="text-danger"> Email Field is Required. </small>
+                    <small *ngIf="myResistrationForm.get('email')?.errors?.['minlength']" class="text-danger">Enter at least 7 charachters.</small>
+                    <!-- <small *ngIf="myResistrationForm.get('email')?.errors?.['maxlength']" class="text-danger">Enter Charachters only upto 35 letters.</small> -->
+                    <small *ngIf="myResistrationForm.get('email')?.errors?.['email']" class="text-danger">Please Enter Email in Format.</small>
+                </small>
+                    <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email*">
+                    
+                </div>
+                <div class="form-group mb-3">
+                    <label for="password">Password<span class="text-danger">*</span></label>
+                    <input type="password" class="form-control mt-3" id="password" formControlName="password" placeholder="Password*">
+                    <small *ngIf="!myResistrationForm.get('password')?.valid && myResistrationForm.get('password')?.touched">
+                        <small *ngIf="myResistrationForm.get('password')?.errors?.['required']" class="text-danger"> Password Field is Required. </small>
+                        <small *ngIf="myResistrationForm.get('password')?.errors?.['minlength']" class="text-danger"> Password at least 8 charachters </small>
+                        
+                    </small>
+                    </div>
+                <div class="form-group mb-3">
+                    <label for="confirmPassword">Confirm password<span class="text-danger">*</span></label>
+                     <small *ngIf="!myResistrationForm.get('confirmpassword')?.valid && myResistrationForm.get('confirmpassword')?.touched">
+                        <small *ngIf="myResistrationForm.get('confirmpassword')?.errors?.['required']" class="text-danger"> Confirm Password Field is Required. </small>
+                        <small *ngIf="myResistrationForm.get('confirmpassword')?.errors?.['minlength']" class="text-danger">Confirm Password at least 8 charachters </small>
+                        <small *ngIf="myResistrationForm.get('confirmpassword')?.errors?.['mustMatch']" class="text-danger"> Password Doesn't  Match</small>
+                    </small>
+                    <input type="password" class="form-control" id="confirmPassword" formControlName="confirmpassword" placeholder="Confirm Password*">
+                </div>
+                <div class="form-check mt-0">
+                    <input type="checkbox" class="form-check-input" id="terms">
+                    <label class="form-check-label" for="terms">I accept the terms and conditions</label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Submit</button>
+        </div>
+    </div>
+<!-- User Details Section -->
+</form>
+</div>

@@ -1,0 +1,38 @@
+
+<form #myform="ngForm">
+ <div class="mainDiv">
+    <div class="main-heading">
+        <h2>Password Generator</h2>
+    </div>
+    
+    <div class="form-control-style mt-3">
+        <label for="passwordLength">Password Length:</label>
+        <input name="passwordLength" minlength="8" type="number" id="passwordLength" class="main-style" [(ngModel)]="passwordLength" class="form-control" >
+     
+    </div>
+      
+      <div class="main-style mt-3">
+        <input name="letters" type="checkbox" id="includeLetters"  [(ngModel)]="includeLetters" required>
+        <label for="includeLetters"> Use Letters (A-Z, a-z)</label>
+      </div>
+      
+      <div class="main-style">
+        <input name="numbers" type="checkbox" id="includeNumbers"   [(ngModel)]="includeNumbers">
+        <label for="includeNumbers"> Use Numbers (0-9)</label>
+      </div>
+      
+      <div class="main-style" >
+        <input name="symbols" type="checkbox" id="includeSymbols" [(ngModel)]="includeSymbols">
+        <label for="includeSymbols"> Use Symbols (!@#$%^&*()_+|:<>?-=[];,./d)</label>
+      </div>
+      
+      <button class="btn btn-primary button-style " (click)="generatePassword()">Generate Password</button>
+      
+      <div *ngIf="generatedPassword" class=" form-control-style mt-3">
+        <p>Generated Password:</p>
+        <textarea name="showpassword" ngModel rows="3" class="form-control"  [value]="generatedPassword"></textarea>
+      </div>
+   
+      <button type="button" (click)="onSubmit(myform)">Submit</button>
+ </div>
+</form>

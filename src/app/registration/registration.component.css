@@ -1,0 +1,40 @@
+input.ng-touched.ng-invalid{
+    border: 2px solid rgb(232, 111, 111);
+    box-shadow: 2px 2px 4px rgb(215, 125, 125);
+} 
+.form-group input,
+.form-group select,
+.form-group textarea {
+    border: none; 
+    border-bottom: 1px solid #ccc; 
+    padding: 2px;
+    background-color: transparent; 
+    text-overflow: clip;
+}  
+.main-heading{
+    text-align: center;
+    color: rgb(102, 125, 226);
+    margin:0% 0% 2% 10%;
+    text-decoration: underline;
+}
+.self-info{
+    text-align: justify;
+}
+.name-heading{
+    text-align: center;
+}    
+form{
+    margin: 0;
+    padding: 2%;
+    background-color: rgb(249, 242, 242);
+    height: 100vh;
+    
+}    
+img{
+    margin: 0% 10% 0% 1%;
+    border-radius: 50%;
+}
+.main-head{
+    text-align: center;
+}
+

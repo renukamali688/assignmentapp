@@ -1,0 +1,14 @@
+.container{
+    border: 1px solid black;
+    height: 50vh;
+    width: 50vw;
+    margin:5% 0% 5% 5%; 
+    text-align: center;
+    padding: 7%;
+    background-color: rgb(128, 114, 155);
+    color: beige;
+   
+}
+form{
+    box-shadow: 2px 4px 7px grey;
+}
