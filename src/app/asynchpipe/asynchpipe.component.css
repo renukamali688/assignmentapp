@@ -1,0 +1,27 @@
+.container-first{
+    background-color: darkgray;
+    height: 40vh;
+    width: 60vw;
+    padding: 2%;
+    border: 2px solid black;
+}
+
+.container-second{
+    background-color: rgb(179, 211, 249);
+    height: 40vh;
+    width: 60vw;
+    padding: 2%;
+    border: 2px solid black;
+}
+
+.container-third{
+    background-color: rgb(159, 222, 195);
+    height: 40vh;
+    width: 60vw;
+    padding: 2%;
+    border: 2px solid black;
+}
+
+.main-heading{
+    text-align: center;
+}

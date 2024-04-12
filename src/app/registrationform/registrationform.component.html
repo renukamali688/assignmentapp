@@ -1,0 +1,128 @@
+<div class="outer-container"> 
+<div class="container">
+   
+    <form [formGroup]="myFormRegistration" (ngSubmit)="onSubmit()">
+        <h2 class="text-center text-black mb-3">Registration form</h2>
+        <div class="row">
+            <div class="col-md-4 me-5">
+                <div class="inner-container">
+                    <!-- <img [src]="imgUrl" alt="Image" width="50vw" height="100vh"> -->
+                </div>
+            </div>
+            <div class="col-md-11 ms-3">
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                        <label class="firstName">First Name :</label>
+                        <small *ngIf="!myFormRegistration.get('firstName')?.valid && myFormRegistration.get('firstName')?.touched">
+                            <small class="text-danger" *ngIf="myFormRegistration.get('firstName')?.errors?.['required']">First Name Required</small>
+                        </small>   
+                        <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="Enter First Name">
+                    </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="lasttName">Last Name :</label>
+                            <small *ngIf="!myFormRegistration.get('lastName')?.valid && myFormRegistration.get('lastName')?.touched">
+                                <small class="text-danger" *ngIf="myFormRegistration.get('lastName')?.errors?.['required']" class="text-danger">Last Name Required</small>
+                            </small>   
+                            <input type="text" class="form-control" formControlName="lastName" placeholder="Enter Last Name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group mb-3">
+                        <i class="fa fa-envelope" aria-hidden="true"> </i>
+                        <label for="email" class="ms-2">Email :</label>
+                        <small *ngIf="!myFormRegistration.get('email')?.valid && myFormRegistration.get('email')?.touched">
+                            <small *ngIf="myFormRegistration.get('email')?.errors?.['required']" class="text-danger"> Email Field is Required. </small>
+                            <small *ngIf="myFormRegistration.get('email')?.errors?.['minlength']" class="text-danger">Enter at least 7 charachters.</small>
+                            <small *ngIf="myFormRegistration.get('email')?.errors?.['email']" class="text-danger">Please Enter Email in Format.</small>
+                        </small>
+                        <input type="email" class="form-control" formControlName="email" placeholder="Enter Your Email">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group mb-2">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <label for="age" class="ms-3">Age :</label>
+                            <input type="text" class="form-control" formControlName="age" placeholder="Enter Your Age"> 
+                              <small *ngIf="!myFormRegistration.get('age')?.valid && myFormRegistration.get('age')?.touched">
+                                <small *ngIf="myFormRegistration.get('age')?.errors?.['required']" class="text-danger"> Age Field is Required. </small>
+                                <small *ngIf="myFormRegistration.get('age')?.errors?.['ageRange']" class="text-danger">  Age must be between 17 to 20. </small>
+                               </small>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="form-group ">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <label for="phone"  class="ms-3">Phone :</label>
+                            <input type="text" class="form-control" formControlName="phone" placeholder="Enetr Your Mobile Number">
+                            <small *ngIf="!myFormRegistration.get('phone')?.valid && myFormRegistration.get('phone')?.touched">
+                                <small *ngIf="myFormRegistration.get('phone')?.errors?.['required']" class="text-danger"> Phone Field is Required. </small>
+                                <small *ngIf="myFormRegistration.get('phone')?.errors?.['maxLength']" class="text-danger">Phone Number Can't exceed 10 digits.</small>
+                            </small>
+
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="form-group mb-3">
+                            <i class="fa fa-male" aria-hidden="true"></i>
+                            <label for="gender" class="ms-3">Gender :</label>
+                            <select id="gender" formControlName="gender" class="form-control">
+                            <option *ngFor="let gender of genders" [value]="gender" >{{gender}}</option>
+                          </select>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="form-group mb-3">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <label for="city" class="ms-3">City :</label>
+                           <select id="city" formControlName="city" class="form-control">
+                            <option *ngFor="let city of cityes" [value]="city" >{{city}}</option>
+                           </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group mb-3">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        <label for="password"  class="ms-2">Password :</label>
+                        <small *ngIf="!myFormRegistration.get('password')?.valid && myFormRegistration.get('password')?.touched">
+                            <small *ngIf="myFormRegistration.get('password')?.errors?.['required']" class="text-danger"> Password Field is Required. </small>
+                            <small *ngIf="myFormRegistration.get('password')?.errors?.['minlength']" class="text-danger"> Password at least 8 charachters </small>
+                        </small>
+                        <input type="password" class="form-control" formControlName="password" placeholder="Enetr Your password">
+ 
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group mb-3">
+                        <i class="fa fa-unlock" aria-hidden="true"></i>
+                        <label for="confirmPassword" class="ms-2">Confirm Password :</label>
+                        <small *ngIf="!myFormRegistration.get('confirmPassword')?.valid && myFormRegistration.get('confirmPassword')?.touched">
+                            <small *ngIf="myFormRegistration.get('confirmPassword')?.errors?.['required']" class="text-danger"> Confirm Password Field is Required. </small>
+                            <small *ngIf="myFormRegistration.get('confirmPassword')?.errors?.['minlength']" class="text-danger">Confirm Password at least 8 charachters </small>
+                            <small *ngIf="myFormRegistration.get('confirmPassword')?.errors?.['mustMatch']" class="text-danger"> Password Doesn't  Match</small>
+                        </small>
+                        <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Enetr Your Confirm password">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</div>

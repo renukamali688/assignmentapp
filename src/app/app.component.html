@@ -2,4 +2,86 @@
 <!-- <app-tdf-validation></app-tdf-validation> -->
 <!-- <app-nesteddropdown></app-nesteddropdown> -->
 <!-- <app-age-calculator></app-age-calculator> -->
-<app-registration></app-registration>
+<!-- <<app-registration></app-registration>> -->
+<!-- <app-registrationform></app-registrationform> -->
+<!-- <app-pipe></app-pipe> -->
+<!-- <app-asynchpipe></app-asynchpipe> -->
+<!-- <app-filterpipe></app-filterpipe> -->
+<!-- <app-search></app-search> -->
+<!-- <app-gify></app-gify> -->
+<!-- <app-postlist></app-postlist> -->
+
+
+    <!-- <header>
+        <nav>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a routerLink="/about" class="nav-link" routerLinkActive="active" >About</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/contact" class="nav-link" routerLinkActive="active">Contact</a>
+            </li>
+           
+            <li class="nav-item">
+              <a routerLink="/product" class="nav-link" routerLinkActive="active">Product</a>
+            </li>
+             
+            <li class="nav-item">
+              <a routerLink="/post" class="nav-link" routerLinkActive="active">Post</a>
+            </li>
+          </ul>
+        </nav>
+      </header> -->
+    
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-md-12">
+  <nav>
+    <button mat-button [matMenuTriggerFor]="home">Home</button>
+    <mat-menu #home="matMenu" yPosition="above">
+      <button mat-menu-item routerLink="product">product</button>
+      <button mat-menu-item routerLink="men">Mens</button>
+      <button mat-menu-item routerLink="women">Women</button>
+      <button mat-menu-item routerLink="post">Post</button>
+    </mat-menu>
+    
+    <button mat-button [matMenuTriggerFor]="product">Product</button>
+    <mat-menu #product="matMenu" yPosition="below">
+      <button mat-menu-item routerLink="product/mobile">Mobile</button>
+      <button mat-menu-item routerLink="product/laptop">Laptop</button>
+      <button mat-menu-item routerLink="product/tv">TV</button>
+    </mat-menu>
+    
+    <button mat-button routerLink="postlist" [matMenuTriggerFor]="postlist">Posts</button>
+    <mat-menu #postlist="matMenu" xPosition="before">
+      <!-- <button mat-menu-item routerLink="postlist">PostList</button> -->
+    </mat-menu>
+  
+    <button mat-button [matMenuTriggerFor]="men">Mens</button>
+    <mat-menu #men="matMenu" xPosition="before">
+      <button mat-menu-item routerLink="men/topweare">Men's Topweare</button>
+      <button mat-menu-item routerLink="men/bottomweare">Men's Bottomweare</button>
+      <button mat-menu-item routerLink="men/footweare">Men's Footweare</button>
+    </mat-menu>
+    
+    <button mat-button [matMenuTriggerFor]="women">Women</button>
+    <mat-menu #women="matMenu" xPosition="before">
+      <button mat-menu-item routerLink="women/beauty">Beauty products</button>
+      <button mat-menu-item routerLink="women/western">Women Western</button>
+      <button mat-menu-item routerLink="women/footweare">Women Footweare</button>
+    </mat-menu>
+    
+    <button mat-button  routerLink="contact" [matMenuTriggerFor]="contact">contact</button>
+    <mat-menu #contact="matMenu" xPosition="before">
+    </mat-menu>
+  </nav>
+ 
+      <div>
+
+  <!-- <img [src]="imgUrl" alt="EcmmerceImage" height="5%" width="100%"> -->
+   </div>
+  </div>
+ </div>
+</div>
+
+<router-outlet></router-outlet>

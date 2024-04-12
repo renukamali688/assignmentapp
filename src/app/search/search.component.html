@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mb-3 mt-3">
+            <input type="text" class="form-control ms-3" #val>
+
+            <button (click)="searchSpace(val.value)" class=" btn btn-success ms-3 mt-2">Search</button>
+
+            <app-space-searches [search]="data"></app-space-searches>
+        </div>
+    </div>
+</div>

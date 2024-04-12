@@ -1,0 +1,20 @@
+<p>pipe works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="content">
+                <h4>Using promises with Async pipe get data on browser.</h4>
+                <h5>Subjects List</h5>
+                <ul>
+                    <li *ngFor = "let item of data$ | async ">
+                        {{ item }}
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+  

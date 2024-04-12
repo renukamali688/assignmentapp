@@ -1,0 +1,16 @@
+{
+  "employee": [
+    {
+      "firstName": "Renuka",
+      "lastName": "Malangner",
+      "email": "malirenu85@gmail.com",
+      "age": "19",
+      "phone": "9876543456",
+      "gender": "Female",
+      "city": "Pune",
+      "password": "123456789",
+      "confirmPassword": "123456789",
+      "id": 1
+    }
+  ]
+}

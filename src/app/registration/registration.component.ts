@@ -8,7 +8,6 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 })
 export class RegistrationComponent implements OnInit {
 
-
 myResistrationForm!:FormGroup;
 
 defaultName:string='Renuka Malangner';
@@ -38,7 +37,7 @@ this.createResistrationForm();
   }
 
   createResistrationForm(){
-    this.myResistrationForm= this.fb.group({
+    this.myResistrationForm = this.fb.group({
       'fullName': new FormControl('Renuka Dnyaneshwar Malangner',Validators.required),
       'birthdate': new FormControl(),
       'gender': new FormControl('Male'),

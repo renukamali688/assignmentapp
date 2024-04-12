@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatMenuPanel } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  imgUrl:string="../assets/images/ecom.jpg";
   title = 'assignmentapp';
 }
+
